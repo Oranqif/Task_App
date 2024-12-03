@@ -1,15 +1,29 @@
-import {Text, View, FlatList, TouchableOpacity, StatusBar} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, StatusBar, Alert} from 'react-native';
 import {GROCERY_DATA} from './Data';
 import styles from './StyleList'
 
 const ListGrocery = ({navigation}) => {
-    const renderItem = ({ item }) => {
+    const renderItem = ({item, index}) => {
         return (
-            <View>
-                <Text>Item: {item.count} {item.item}{item.count > 1 ? "s" : ""} | Cost: ${item.cost * item.count}</Text>
-                <TouchableOpacity onPress={() => {navigation.navigate("AddGeneral")}}>
-                    <Text>Edit</Text>
-                </TouchableOpacity>
+            <View style={styles.mainTaskStyle}>
+                <View style={styles.subTaskStyle}>
+                    <View>
+                        <Text style={styles.titleTaskStyle}>Item:
+                            <Text style={styles.textTaskStyle}> {item.count} {item.item}{item.count > 1 ? "s" : ""}</Text>
+                        </Text>
+                        <Text style={styles.titleTaskStyle}>Cost:
+                            <Text style={styles.textTaskStyle}> ${item.cost * item.count}</Text>
+                        </Text>
+                    </View>
+                </View>
+                <View style={styles.mainButtonStyle}>
+                    <TouchableOpacity style={styles.subButtonEditStyle} onPress={() => {
+                        navigation.navigate("Edit Grocery",
+                            {index:index, item:item.item, count:item.count, cost:item.cost})
+                    }}>
+                        <Text style={styles.textButtonEditStyle}>Edit</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     };
@@ -22,22 +36,39 @@ const ListGrocery = ({navigation}) => {
         return total;
     };
 
+    const receiveCost = () => {
+        return (
+            Alert.alert(
+                "Check Cost",
+                `Total Cost $${totalCost(GROCERY_DATA)}`
+            )
+        );
+    };
+
     return (
         <View>
             <StatusBar/>
             <View style={{borderBottomWidth: 2, backgroundColor: "lightgrey", borderColor: "grey"}}>
-                <TouchableOpacity onPress={() => {navigation.navigate("Home")}}>
-                    <Text>Back</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Add</Text>
-                </TouchableOpacity>
+                <View style={styles.mainButtonStyle}>
+                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("Home")}}>
+                        <Text style={styles.textButtonStyle}>Back</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("Add Grocery")}}>
+                        <Text style={styles.textButtonStyle}>Add</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
             <FlatList
                 data={GROCERY_DATA}
                 renderItem={renderItem}
             />
-            <Text>Total Cost: ${totalCost(GROCERY_DATA)}</Text>
+            <View style={styles.mainButtonProgressStyle}>
+                <View style={{margin: 10}}>
+                    <TouchableOpacity style={styles.subButtonProgressStyle} onPress={() => receiveCost()}>
+                        <Text style={styles.textButtonProgressStyle}>Check Cost</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
         </View>
     );
 };
