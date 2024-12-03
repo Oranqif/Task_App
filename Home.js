@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StatusBar, Text, TouchableOpacity, View } from 'react-native';
 
 const Home = ({ navigation }) => {
     const Item = ({ itemName, itemNavigate }) => {

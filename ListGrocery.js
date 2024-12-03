@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import {StyleSheet, Text, View, FlatList, TouchableOpacity, StatusBar} from 'react-native';
-import {GROCERY_DATA} from "./Data";
+import {Text, View, FlatList, TouchableOpacity, StatusBar} from 'react-native';
+import {GROCERY_DATA} from './Data';
+import styles from './StyleList'
 
 const ListGrocery = ({navigation}) => {
     const renderItem = ({ item }) => {

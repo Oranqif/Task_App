@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
+import {Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
 import { FITNESS_DATA } from './Data.js';
 import styles from './StyleAdd';
 
