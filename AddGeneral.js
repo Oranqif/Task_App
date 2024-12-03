@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
-import { GENERAL_DATA } from './Data.js';
+import {GENERAL_DATA} from './Data.js';
 import styles from './StyleAdd';
 
 const AddGeneral = ({navigation}) => {
@@ -20,30 +20,46 @@ const AddGeneral = ({navigation}) => {
         }
     };
 
+    const handleBack = (task, desc, duration) => {
+        if (task !== '' || desc !== '' || duration !== '') {
+            Alert.alert(
+                "Are you sure?",
+                "You will lose your progress",
+                [{text: "Yes", onPress: () => {
+                        navigation.navigate("General");
+                    }},
+                    {text: "No"}
+                ]
+            );
+        } else {
+            navigation.navigate("General");
+        }
+    };
+
     return (
         <View>
             <View style={{backgroundColor: "lightgrey", borderBottomWidth: 2, borderColor: "grey",}}>
                 <View style={styles.mainButtonStyle}>
-                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("General")}}>
+                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => handleBack(task, desc, duration)}>
                         <Text style={styles.textButtonStyle}>Back</Text>
                     </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.separator}>
                 <View style={{margin: 11,}}>
-                    <Text>Task: </Text>
+                    <Text style={styles.textInputStyle}>Task: </Text>
                     <TextInput style={styles.inputStyle} onChangeText={setTask} multiline={true} maxLength={50}/>
                 </View>
             </View>
             <View style={styles.separator}>
                 <View style={{margin: 11,}}>
-                    <Text>Description: </Text>
+                    <Text style={styles.textInputStyle}>Description: </Text>
                     <TextInput style={styles.inputStyle} onChangeText={setDesc} multiline={true} numberOfLines={5}/>
                 </View>
             </View>
             <View style={styles.separator}>
                 <View style={{flexDirection: "row", alignItems: "center", margin: 11}}>
-                    <Text>Duration: </Text>
+                    <Text style={styles.textInputStyle}>Duration: </Text>
                     <TextInput style={[styles.inputStyle, {width: "10%", textAlign: "center"}]} onChangeText={setDuration} maxLength={3}/>
                 </View>
             </View>

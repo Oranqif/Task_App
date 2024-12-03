@@ -31,6 +31,8 @@ const AddGrocery = ({navigation}) => {
                     {text: "No"}
                 ]
             );
+        } else {
+            navigation.navigate("Grocery");
         }
     };
 
@@ -45,20 +47,20 @@ const AddGrocery = ({navigation}) => {
             </View>
             <View style={styles.separator}>
                 <View style={{margin: 11,}}>
-                    <Text>Item: </Text>
+                    <Text style={styles.textInputStyle}>Item: </Text>
                     <TextInput style={styles.inputStyle} onChangeText={setItem} maxLength={30}/>
                 </View>
             </View>
             <View style={styles.separator}>
-                <View style={{margin: 11,}}>
-                    <Text>Count: </Text>
-                    <TextInput style={styles.inputStyle} onChangeText={setCount} maxLength={3}/>
+                <View style={{flexDirection: "row", alignItems: "center", margin: 11}}>
+                    <Text style={styles.textInputStyle}>Count: </Text>
+                    <TextInput style={[styles.inputStyle, {width: "10%", textAlign: "center"}]} onChangeText={setCount} maxLength={3}/>
                 </View>
             </View>
             <View style={styles.separator}>
                 <View style={{flexDirection: "row", alignItems: "center", margin: 11}}>
-                    <Text>Cost: </Text>
-                    <TextInput style={[styles.inputStyle, {width: "10%", textAlign: "center"}]} onChangeText={setCost} maxLength={6}/>
+                    <Text style={styles.textInputStyle}>Cost: </Text>
+                    <TextInput style={[styles.inputStyle, {width: "30%", textAlign: "center"}]} onChangeText={setCost} maxLength={6}/>
                 </View>
             </View>
             <View style={{backgroundColor: "lightgrey", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "grey",}}>

@@ -21,11 +21,27 @@ const AddFitness = ({navigation}) => {
         }
     };
 
+    const handleBack = (step, count, countSet, reason) => {
+        if (step !== '' || count !== '' || countSet !== '' || reason !== '') {
+            Alert.alert(
+                "Are you sure?",
+                "You will lose your progress",
+                [{text: "Yes", onPress: () => {
+                        navigation.navigate("Fitness");
+                    }},
+                    {text: "No"}
+                ]
+            );
+        } else {
+            navigation.navigate("Fitness");
+        }
+    };
+
     return (
         <View>
             <View style={{backgroundColor: "lightgrey", borderBottomWidth: 2, borderColor: "grey",}}>
                 <View style={styles.mainButtonStyle}>
-                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("Fitness")}}>
+                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => handleBack(step, count, countSet, reason)}>
                         <Text style={styles.textButtonStyle}>Back</Text>
                     </TouchableOpacity>
                 </View>
