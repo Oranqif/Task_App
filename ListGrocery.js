@@ -1,6 +1,7 @@
 import {Text, View, FlatList, TouchableOpacity, StatusBar, Alert} from 'react-native';
 import {GROCERY_DATA} from './Data';
 import styles from './StyleList'
+import Icon from "react-native-vector-icons/AntDesign";
 
 const ListGrocery = ({navigation}) => {
     const renderItem = ({item, index}) => {
@@ -15,6 +16,7 @@ const ListGrocery = ({navigation}) => {
                             <Text style={styles.textTaskStyle}> ${item.cost * item.count}</Text>
                         </Text>
                     </View>
+                    <Icon style={{alignSelf: "center", marginTop: 20}} name={item.completed ? "check" : "close"} size={40}/>
                 </View>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonEditStyle} onPress={() => {

@@ -25,6 +25,7 @@ const Navigation = () => {
                 <Stack.Screen name="Add General" component={AddGeneral}/>
                 <Stack.Screen name="Edit General" component={EditGeneral}/>
                 <Stack.Screen name="Grocery" component={ListGrocery}/>
+                <Stack.Screen name="Add Grocery" component={AddGrocery}/>
                 <Stack.Screen name="Edit Grocery" component={EditGrocery}/>
                 <Stack.Screen name="Fitness" component={ListFitness}/>
                 <Stack.Screen name="Add Fitness" component={AddFitness}/>

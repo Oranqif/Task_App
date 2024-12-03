@@ -13,7 +13,7 @@ const EditGeneral = ({navigation, route}) => {
 
     const handleSave = (step, count, countSet, reason, completed) => {
         if (step === '') {
-            Alert.alert("Error","Task is empty");
+            Alert.alert("Error","Step is empty");
         } else if (!(Number.isInteger(count)) || !(Number.isInteger(countSet))) {
             Alert.alert("Error","Count/Set Count is not an integer/is empty")
         } else {

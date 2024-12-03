@@ -5,16 +5,16 @@ import {GROCERY_DATA} from "./Data";
 import styles from "./StyleEdit";
 
 const EditGrocery = ({navigation, route}) => {
-    const [item, setItem] = useState(String(route.params.cost));
+    const [item, setItem] = useState(String(route.params.item));
     const [count, setCount] = useState(String(route.params.count));
     const [cost, setCost] = useState(String(route.params.cost));
     const [completed, setCompleted] = useState(Boolean(route.params.completed));
 
     const handleSave = (item, count, cost, completed) => {
         if (item === '') {
-            Alert.alert("Error","Task is empty");
-        } else if (!(Number.isInteger(cost)) || !(Number.isInteger(count))) {
-            Alert.alert("Error","Duration is not an integer/is empty")
+            Alert.alert("Error","Item is empty");
+        } else if (!(Number.isFinite(cost)) || !(Number.isInteger(count))) {
+            Alert.alert("Error","Count/Cost is not an integer/float/is empty")
         } else {
             GROCERY_DATA[route.params.index].item = item;
             GROCERY_DATA[route.params.index].count = count;
@@ -42,7 +42,7 @@ const EditGrocery = ({navigation, route}) => {
         <View>
             <View style={{backgroundColor: "lightgrey", borderBottomWidth: 2, borderColor: "grey",}}>
                 <View style={styles.mainButtonStyle}>
-                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("General")}}>
+                    <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("Grocery")}}>
                         <Text style={styles.textButtonStyle}>Back</Text>
                     </TouchableOpacity>
                 </View>
@@ -54,15 +54,15 @@ const EditGrocery = ({navigation, route}) => {
                 </View>
             </View>
             <View style={styles.separator}>
-                <View style={{margin: 11,}}>
+                <View style={{flexDirection: "row", alignItems: "center", margin: 11}}>
                     <Text style={styles.textInputStyle}>Count:</Text>
-                    <TextInput style={[styles.inputStyle, {width: "100%", alignSelf: "center"}]} value={count} onChangeText={setCount} maxLength={4}/>
+                    <TextInput style={[styles.inputStyle, {width: "10%", textAlign: "center"}]} value={count} onChangeText={setCount} maxLength={3}/>
                 </View>
             </View>
             <View style={styles.separator}>
                 <View style={{flexDirection: "row", alignItems: "center", margin: 11}}>
                     <Text style={styles.textInputStyle}>Cost:</Text>
-                    <TextInput style={[styles.inputStyle, {width: "10%", textAlign: "center"}]} value={cost} onChangeText={setCost} maxLength={4}/>
+                    <TextInput style={[styles.inputStyle, {width: "30%", textAlign: "center"}]} value={cost} onChangeText={setCost} maxLength={6}/>
                 </View>
             </View>
             <View>
