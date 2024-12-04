@@ -16,7 +16,7 @@ const ListGrocery = ({navigation}) => {
                             <Text style={styles.textTaskStyle}> ${item.cost * item.count}</Text>
                         </Text>
                     </View>
-                    <Icon style={{alignSelf: "center", marginTop: 20}} name={item.completed ? "check" : "close"} size={40}/>
+                    <Icon style={{alignSelf: "center", marginTop: 20, color: "#191919"}} name={item.completed ? "check" : "close"} size={40}/>
                 </View>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonEditStyle} onPress={() => {
@@ -38,11 +38,20 @@ const ListGrocery = ({navigation}) => {
         return total;
     };
 
+    const costBought = (groceryData) => {
+        let total = 0;
+        for (let i = 0; i < groceryData.length; i++) {
+            groceryData[i].completed ? total += groceryData[i].cost * groceryData[i].count : total += 0;
+        }
+        return total;
+    };
+
     const receiveCost = () => {
         return (
             Alert.alert(
                 "Check Cost",
-                `Total Cost $${totalCost(GROCERY_DATA)}`
+                `Total Cost: $${totalCost(GROCERY_DATA)}
+                Cost Bought: $${costBought(GROCERY_DATA)}`
             )
         );
     };

@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     textInputStyle: {
+        color: "#191919",
         fontSize: 18,
         fontWeight: "bold",
     },

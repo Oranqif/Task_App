@@ -16,7 +16,7 @@ const ListFitness = ({navigation}) => {
                             <Text style={styles.textTaskStyle} multiline numberOfLines={5}>{"\n"}{item.reason}</Text>
                         </Text>
                     </View>
-                    <Icon style={{alignSelf: "center", marginTop: 20,}} name={item.completed ? "check" : "close"} size={40}/>
+                    <Icon style={{alignSelf: "center", marginTop: 20, color: "#191919"}} name={item.completed ? "check" : "close"} size={40}/>
                 </View>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonEditStyle} onPress={() => {

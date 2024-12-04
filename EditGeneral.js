@@ -69,7 +69,7 @@ const EditGeneral = ({navigation, route}) => {
                 <View style={{flexDirection: "row", alignItems: "center", margin: 11}}>
                     <Text style={styles.textInputStyle}>Completed:</Text>
                     <TouchableOpacity style={{marginLeft: 100}} onPress={() => completed ? setCompleted(false) : setCompleted(true)}>
-                        <Icon name={completed ? "checkbox" : "checkbox-outline"} size={100}/>
+                        <Icon style={{color: "#191919"}} name={completed ? "checkbox" : "checkbox-outline"} size={100}/>
                     </TouchableOpacity>
                 </View>
             </View>
