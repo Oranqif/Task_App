@@ -3,7 +3,7 @@ import {StyleSheet} from "react-native";
 const styles = StyleSheet.create({
     separator: {
         borderBottomWidth: 1,
-        borderColor: "darkgrey",
+        borderColor: "#646464",
     },
     mainButtonStyle: {
         flexDirection: "row",
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     subButtonStyle: {
-        backgroundColor: "grey",
+        backgroundColor: "#232828",
         width: "70%",
         borderRadius: 5,
     },
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     subStateButtonStyle: {
-        backgroundColor: "grey",
+        backgroundColor: "#232828",
         width: "40%",
         borderRadius: 5,
     },

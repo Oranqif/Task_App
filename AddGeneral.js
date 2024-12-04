@@ -38,7 +38,7 @@ const AddGeneral = ({navigation}) => {
 
     return (
         <View>
-            <View style={{backgroundColor: "lightgrey", borderBottomWidth: 2, borderColor: "grey",}}>
+            <View style={{backgroundColor: "#4b555a", borderBottomWidth: 2, borderColor: "#2d3237",}}>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonStyle} onPress={() => handleBack(task, desc, duration)}>
                         <Text style={styles.textButtonStyle}>Back</Text>
@@ -63,7 +63,7 @@ const AddGeneral = ({navigation}) => {
                     <TextInput style={[styles.inputStyle, {width: "10%", textAlign: "center"}]} onChangeText={setDuration} maxLength={3}/>
                 </View>
             </View>
-            <View style={{backgroundColor: "lightgrey", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "grey",}}>
+            <View style={{backgroundColor: "#4b555a", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "#2d3237",}}>
                 <View style={styles.mainSubmitButtonStyle}>
                     <TouchableOpacity style={styles.subSubmitButtonStyle} onPress={() => handleSubmit(task, desc, Number(duration))}>
                         <Text style={styles.textSubmitButtonStyle}>Submit</Text>

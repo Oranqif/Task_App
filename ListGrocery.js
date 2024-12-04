@@ -51,7 +51,7 @@ const ListGrocery = ({navigation}) => {
             Alert.alert(
                 "Check Cost",
                 `Total Cost: $${totalCost(GROCERY_DATA)}
-                Cost Bought: $${costBought(GROCERY_DATA)}`
+Cost Bought: $${costBought(GROCERY_DATA)}`
             )
         );
     };
@@ -59,7 +59,7 @@ const ListGrocery = ({navigation}) => {
     return (
         <View>
             <StatusBar/>
-            <View style={{borderBottomWidth: 2, backgroundColor: "lightgrey", borderColor: "grey"}}>
+            <View style={{borderBottomWidth: 2, backgroundColor: "#4b555a", borderColor: "#2d3237"}}>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("Home")}}>
                         <Text style={styles.textButtonStyle}>Back</Text>

@@ -4,7 +4,9 @@ import Icon from "react-native-vector-icons/FontAwesome6.js"
 
 const styles = StyleSheet.create({
     headerTitle: {
-        backgroundColor: "grey",
+        backgroundColor: "#4b555a",
+        borderBottomWidth: 2,
+        borderColor: "#2d3237",
     },
     headerText: {
         color: "ghostwhite",
@@ -16,6 +18,7 @@ const styles = StyleSheet.create({
     },
     itemStyle: {
         borderBottomWidth: 1,
+        borderColor: "#191919",
     },
     textItemStyle: {
         color: "whitesmoke",

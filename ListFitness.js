@@ -52,7 +52,7 @@ Progress: ${Math.round((totalProgress(FITNESS_DATA) / FITNESS_DATA.length) * 100
     return (
         <View style={{paddingBottom: 137,}}>
             <StatusBar/>
-            <View style={{borderBottomWidth: 2, backgroundColor: "lightgrey", borderColor: "grey"}}>
+            <View style={{borderBottomWidth: 2, backgroundColor: "#4b555a", borderColor: "#2d3237"}}>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("Home")}}>
                         <Text style={styles.textButtonStyle}>Back</Text>

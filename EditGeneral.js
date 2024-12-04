@@ -40,7 +40,7 @@ const EditGeneral = ({navigation, route}) => {
 
     return (
         <View>
-            <View style={{backgroundColor: "lightgrey", borderBottomWidth: 2, borderColor: "grey",}}>
+            <View style={{backgroundColor: "#4b555a", borderBottomWidth: 2, borderColor: "#2d3237",}}>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonStyle} onPress={() => {navigation.navigate("General")}}>
                         <Text style={styles.textButtonStyle}>Back</Text>
@@ -73,7 +73,7 @@ const EditGeneral = ({navigation, route}) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={{backgroundColor: "lightgrey", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "grey",}}>
+            <View style={{backgroundColor: "#4b555a", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "#2d3237",}}>
                 <View style={styles.mainStateButtonStyle}>
                     <TouchableOpacity style={styles.subStateButtonStyle} onPress={() => handleSave(task, desc, Number(duration), completed)}>
                         <Text style={styles.textStateButtonStyle}>Save</Text>

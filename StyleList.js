@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     subButtonStyle: {
-        backgroundColor: "grey",
+        backgroundColor: "#232828",
         width: "40%",
         borderRadius: 5,
     },
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     },
     mainTaskStyle: {
         borderTopWidth: 1,
-        borderColor: "darkgrey"
+        borderColor: "#646464"
     },
     subTaskStyle: {
         flexDirection: "row",
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     subButtonEditStyle: {
         alignSelf: "center",
-        backgroundColor: "grey",
+        backgroundColor: "#413732",
         width: "30%",
         borderRadius: 5,
     },
@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     mainButtonProgressStyle: {
-        backgroundColor: "lightgrey",
+        backgroundColor: "#4b555a",
         borderTopWidth: 2,
         borderBottomWidth: 2,
-        borderColor: "grey"
+        borderColor: "#2d3237"
     },
     subButtonProgressStyle: {
         alignSelf: "center",
-        backgroundColor: "grey",
+        backgroundColor: "#232828",
         width: "70%",
         borderRadius: 5,
     },

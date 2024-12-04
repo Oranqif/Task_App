@@ -38,7 +38,7 @@ const AddGrocery = ({navigation}) => {
 
     return (
         <View>
-            <View style={{backgroundColor: "lightgrey", borderBottomWidth: 2, borderColor: "grey",}}>
+            <View style={{backgroundColor: "#4b555a", borderBottomWidth: 2, borderColor: "#2d3237",}}>
                 <View style={styles.mainButtonStyle}>
                     <TouchableOpacity style={styles.subButtonStyle} onPress={() => handleBack(item, count, cost)}>
                         <Text style={styles.textButtonStyle}>Back</Text>
@@ -63,7 +63,7 @@ const AddGrocery = ({navigation}) => {
                     <TextInput style={[styles.inputStyle, {width: "30%", textAlign: "center"}]} onChangeText={setCost} maxLength={6}/>
                 </View>
             </View>
-            <View style={{backgroundColor: "lightgrey", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "grey",}}>
+            <View style={{backgroundColor: "#4b555a", borderTopWidth: 2, borderBottomWidth: 2, borderColor: "#2d3237",}}>
                 <View style={styles.mainSubmitButtonStyle}>
                     <TouchableOpacity style={styles.subSubmitButtonStyle} onPress={() => handleSubmit(item, Number(count), Number(cost))}>
                         <Text style={styles.textSubmitButtonStyle}>Submit</Text>
